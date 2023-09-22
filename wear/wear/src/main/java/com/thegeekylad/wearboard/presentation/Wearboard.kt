@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.Chip
 import androidx.wear.compose.material.ChipDefaults
@@ -40,14 +41,8 @@ fun Wearboard(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Wearboard",
+                text = "Choose input\nmethod",
                 textAlign = TextAlign.Center,
-                fontStyle = FontStyle.Italic
-            )
-            Text(
-                text = "Input Method",
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Bold
             )
         }
         Chip(
