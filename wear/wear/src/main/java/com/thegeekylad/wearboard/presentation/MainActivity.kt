@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -74,6 +75,7 @@ class MainActivity : ComponentActivity() {
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(text = "Sample app activity")
                 WearboardMaster(
                     context = applicationContext,
                     inputField = { onClickField, value ->
@@ -81,7 +83,8 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.fillMaxWidth(1f),
                             label = { TextItem(value) },
                             contentPadding = ChipDefaults.CompactChipContentPadding,
-                            onClick = onClickField
+                            onClick = onClickField,
+                            colors = ChipDefaults.primaryChipColors(),
                         )
                     },
                     inputValue = label,
@@ -98,6 +101,13 @@ class MainActivity : ComponentActivity() {
 
                         launcher.launch(intent)
                     }
+                )
+                Chip(
+                    modifier = Modifier.wrapContentWidth(),
+                    label = { TextItem("Go") },
+                    contentPadding = ChipDefaults.CompactChipContentPadding,
+                    onClick = {  },
+                    colors = ChipDefaults.secondaryChipColors(),
                 )
             }
         }
