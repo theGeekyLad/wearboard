@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromByteArray
+import kotlinx.serialization.encodeToByteArray
 import kotlinx.serialization.protobuf.ProtoBuf
 
 @ExperimentalSerializationApi
@@ -21,6 +22,7 @@ fun WearboardMaster(
     context: Context,
     inputField: @Composable (onClickField: () -> Unit, value: String) -> Unit,
     inputValue: MutableState<String>,
+    dialogTitle: String,
     onClickWatch: () -> Unit,
 ) {
     val launcher =
@@ -35,7 +37,8 @@ fun WearboardMaster(
                         inputValue.value = ProtoBuf.decodeFromByteArray<WearboardPayload>(byteArray).data
                     }
 
-                    wearableMessagingManager.ping(Constants.MSG_TYPE_INPUT, null)
+                    val payload = ProtoBuf.encodeToByteArray(WearboardPayload(dialogTitle))
+                    wearableMessagingManager.ping(Constants.MSG_TYPE_INPUT, payload)
                 }
             }
         }

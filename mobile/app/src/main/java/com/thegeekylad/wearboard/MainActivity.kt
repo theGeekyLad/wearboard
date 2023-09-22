@@ -20,15 +20,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import com.thegeekylad.wearboard.ui.theme.WearboardTheme
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.decodeFromByteArray
 import kotlinx.serialization.encodeToByteArray
 import kotlinx.serialization.protobuf.ProtoBuf
 
+@ExperimentalSerializationApi
 @ExperimentalMaterial3Api
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val showWatchInput = mutableStateOf(false)
+        val title = mutableStateOf("")
 
         setContent {
             val inputPhoneText = remember { mutableStateOf("") }
@@ -42,18 +46,9 @@ class MainActivity : ComponentActivity() {
                     if (showWatchInput.value)
                         AlertDialog(
                             title = {
-                                Row {
-                                    Text(
-                                        text = "Wearboard",
-                                        fontStyle = FontStyle.Italic
-                                    )
-                                    Text(
-                                        text = " | ",
-                                    )
-                                    Text(
-                                        text = "Input",
-                                    )
-                                }
+                                Text(
+                                    text = title.value,
+                                )
                             },
                             text = {
                                 OutlinedTextField(
@@ -100,6 +95,7 @@ class MainActivity : ComponentActivity() {
         wearableMessagingManager.attachMessageListener(Constants.MSG_TYPE_INPUT) { byteArray ->
             Log.e(Constants.APP_TAG, "Got a message!")
             showWatchInput.value = true
+            title.value = ProtoBuf.decodeFromByteArray<WearboardPayload>(byteArray).data
         }
     }
 }

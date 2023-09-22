@@ -85,6 +85,7 @@ class MainActivity : ComponentActivity() {
                         )
                     },
                     inputValue = label,
+                    dialogTitle = "Search",
                     onClickWatch = {
                         val intent: Intent = RemoteInputIntentHelper.createActionRemoteInputIntent();
                         val remoteInputs: List<RemoteInput> = listOf(
