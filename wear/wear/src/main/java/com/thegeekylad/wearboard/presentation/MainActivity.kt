@@ -93,7 +93,7 @@ class MainActivity : ComponentActivity() {
                         val intent: Intent = RemoteInputIntentHelper.createActionRemoteInputIntent();
                         val remoteInputs: List<RemoteInput> = listOf(
                             RemoteInput.Builder("search_text")
-                                .setLabel("Search Text")
+                                .setLabel("Search")
                                 .build()
                         )
 

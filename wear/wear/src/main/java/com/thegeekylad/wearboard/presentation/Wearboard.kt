@@ -25,9 +25,9 @@ import androidx.wear.compose.material.Text
 
 @Composable
 fun Wearboard(
-    activity: Activity,
     onClickPhone: () -> Unit?,
-    onClickWatch: () -> Unit?
+    onClickWatch: () -> Unit?,
+    isPhonePriority: Boolean = false,
 ) {
     Column(
         modifier = Modifier
@@ -48,12 +48,13 @@ fun Wearboard(
         Chip(
             modifier = Modifier.width(100.dp),
             label = { TextItem("Phone") },
-            colors = ChipDefaults.secondaryChipColors(),
+            colors = if (isPhonePriority) ChipDefaults.primaryChipColors() else ChipDefaults.secondaryChipColors(),
             onClick = { onClickPhone() }
         )
         Chip(
             modifier = Modifier.width(100.dp),
             label = { TextItem("Watch") },
+            colors = if (!isPhonePriority) ChipDefaults.primaryChipColors() else ChipDefaults.secondaryChipColors(),
             onClick = { onClickWatch() }
         )
     }

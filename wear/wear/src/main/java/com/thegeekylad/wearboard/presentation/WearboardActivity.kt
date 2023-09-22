@@ -23,7 +23,6 @@ class WearboardActivity : ComponentActivity() {
                  * see d.android.com/wear/compose.
                  */
                 Wearboard(
-                    activity = this,
                     onClickPhone = {
                         val intentResult = Intent()
                         intentResult.putExtra("isSelectionPhone", true)
@@ -35,7 +34,8 @@ class WearboardActivity : ComponentActivity() {
                         intentResult.putExtra("isSelectionPhone", false)
                         setResult(RESULT_OK, intentResult)
                         finish()
-                    }
+                    },
+                    isPhonePriority = true
                 )
             }
         }
