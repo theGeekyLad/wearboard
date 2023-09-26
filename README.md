@@ -12,7 +12,7 @@ The project derives major inspiration from Android OS' remote input functionalit
 
 Watch a quick 1 minute demo of Wearboard in action here:
 
-[<img src="./dev/4.png" width=300>](https://youtube.com/shorts/rXEaJjPUv4A?feature=share)
+[<img src="./dev/4.png" width=400>](https://youtube.com/shorts/rXEaJjPUv4A?feature=share)
 
 Read more about Wearboard here - . :eyes: 
 
