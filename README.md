@@ -8,7 +8,7 @@ Touch typing is a terrible idea on ant-sized watch screens albeit good swipe ges
 
 Wearboard is an SDK that can be "plugged" into any Android / WearOS app codebase that, on click of a text box on a watch app, gives users the choice to either type on their phone or an on-screen watch keyboard to populate text fields on watch apps. :boom: The core idea is that whenever a user clicks on a text input field on a watch app, an intermediary Wearboard screen is presented asking the user to make a choice.
 
-The project derives major inspiration from Android OS' remote input functionality for Wear OS as well as my mentor, Gonzalo Alsina, for his thoughts on the subject during my summer 2023 internship at TuneIn Inc. :tada:
+The project derives major inspiration from Android OS' remote input functionality for Wear OS as well as my mentor, [Gonzalo](https://www.linkedin.com/in/gonzalo-alsina-b5548a25/), for his thoughts on the subject during my summer 2023 [internship at TuneIn Inc.](https://www.linkedin.com/posts/thegeekylad_tunein-tuneininternship-gratitude-activity-7104032714558738432-9LBG?utm_source=share&utm_medium=member_desktop) :tada:
 
 Read more about Wearboard on [my Medium](https://thegeekylad.medium.com/wearboard-truly-remote-input-for-wearos-124aae396040) :eyes: and watch a quick 1 minute demo :clapper: of Wearboard in action here:
 
