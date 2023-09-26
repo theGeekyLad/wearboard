@@ -10,11 +10,9 @@ Wearboard is an SDK that can be "plugged" into any Android / WearOS app codebase
 
 The project derives major inspiration from Android OS' remote input functionality for Wear OS as well as my mentor, Gonzalo Alsina, for his thoughts on the subject during my summer 2023 internship at TuneIn Inc. :tada:
 
-Watch a quick 1 minute demo of Wearboard in action here:
+Read more about Wearboard on [my Medium](https://thegeekylad.medium.com/wearboard-truly-remote-input-for-wearos-124aae396040) :eyes: and watch a quick 1 minute demo :clapper: of Wearboard in action here:
 
 [<img src="./dev/4.png" width=400>](https://youtube.com/shorts/rXEaJjPUv4A?feature=share)
-
-Read more about Wearboard here - . :eyes: 
 
 ## :bar_chart: Status
 
